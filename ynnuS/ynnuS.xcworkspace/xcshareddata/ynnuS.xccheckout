@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4DE930D9-98D2-4D36-9186-1E11B4A33878</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ynnuS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>171EF9AB-C7D4-4D97-A514-2A94E7120F4F</key>
+		<string>https://github.com/iamjason/ynnus-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ynnuS/ynnuS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>171EF9AB-C7D4-4D97-A514-2A94E7120F4F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/iamjason/ynnus-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>171EF9AB-C7D4-4D97-A514-2A94E7120F4F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>171EF9AB-C7D4-4D97-A514-2A94E7120F4F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ynnus-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

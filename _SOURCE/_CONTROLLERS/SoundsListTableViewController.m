@@ -7,8 +7,13 @@
 //
 
 #import "SoundsListTableViewController.h"
+#import "Sound.h"
+
+#import "EmptySoundsCell.h"
 
 @interface SoundsListTableViewController ()
+
+@property (nonatomic, strong) NSMutableArray *sounds;
 
 @end
 
@@ -27,7 +32,7 @@
 {
     [super viewDidLoad];
 
-    self.title = NSLocalizedString(@"MY RECORDINGS", nil);
+    self.title = NSLocalizedString(@"My Recordings", @"SoundsListTable Header");
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -38,10 +43,30 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    
+    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(_addSound:)];
+    self.navigationItem.rightBarButtonItem = addItem;
+    
+}
+
+-(NSMutableArray*)sounds {
+    
+    if (!_sounds) {
+        
+        _sounds = [NSMutableArray array];
+        
+        // check CoreData for previously recorded sounds
+        NSArray *savedSounds = [Sound MR_findAllSortedBy:@"created" ascending:NO];
+        if (savedSounds.count > 0) {
+            _sounds = [NSMutableArray arrayWithArray:savedSounds];
+        }
+        
+    }
+    
+    return _sounds;
 }
 
 #pragma mark - Table view data source
@@ -53,11 +78,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return MAX(self.sounds.count, 1);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (self.sounds.count == 0) {
+        
+        EmptySoundsCell *empty = [[EmptySoundsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"emptyRecordings"];
+        empty.textLabel.text = NSLocalizedString(@"No Recordings yet...", nil);
+        return empty;
+        
+    }
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell;// = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
