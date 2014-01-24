@@ -10,4 +10,10 @@
 
 @interface RootNavigationViewController : UINavigationController
 
+-(void)addRecordViewController:(id)aDelegate;
+
+-(void)showPlayViewController:(id)aDelegate andSound:(Sound*)aSound;
+
+-(void)showInfoViewController;
+
 @end

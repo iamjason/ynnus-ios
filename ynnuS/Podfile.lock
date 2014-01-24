@@ -17,16 +17,19 @@ PODS:
   - AFNetworking/Serialization (2.1.0)
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
+  - CZDateFormatterCache (1.2)
   - MagicalRecord (2.2)
   - TestFlightSDK (2.2.1-beta)
 
 DEPENDENCIES:
   - AFNetworking
+  - CZDateFormatterCache
   - MagicalRecord
   - TestFlightSDK
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
+  CZDateFormatterCache: b6977e68eb5cb76ac0880eeb0d58130038461fe1
   MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
   TestFlightSDK: 4249c2f70e621bcfbdebf019073169c8fe36be13
 

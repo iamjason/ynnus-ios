@@ -16,5 +16,18 @@
     #import <CoreData/CoreData.h>
 #endif
 
+// CoreData helpers
+#define MR_SHORTHAND
 #import <MagicalRecord/MagicalRecord.h>
 #import <MagicalRecord/CoreData+MagicalRecord.h>
+
+// Help performance on tableviewcells scrolling
+#import <CZDateFormatterCache/CZDateFormatterCache.h>
+
+
+// CoreData model for storing user's sounds
+#import "Sound.h"
+
+// global variables
+#import "Globals.h"
+#import "RootNavigationViewController.h"

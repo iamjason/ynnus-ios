@@ -10,6 +10,9 @@
 
 #import "SoundsListTableViewController.h"
 
+#import "RecordSoundViewController.h"
+#import "PlaySoundViewController.h"
+#import "InfoViewController.h"
 @interface RootNavigationViewController ()
 
 @end
@@ -30,5 +33,27 @@
     return self;
 }
 
+-(void)addRecordViewController:(id)aDelegate {
+    
+    
+    RecordSoundViewController *vc = [[UIStoryboard storyboardWithName:@"Record" bundle:nil] instantiateViewControllerWithIdentifier:@"Record"];
+    [self pushViewController:vc animated:YES];
+    
+}
 
+-(void)showPlayViewController:(id)aDelegate andSound:(Sound*)aSound {
+    
+    PlaySoundViewController *vc = [[UIStoryboard storyboardWithName:@"Play" bundle:nil] instantiateViewControllerWithIdentifier:@"Play"];
+    vc.soundModel = aSound;
+
+    [self pushViewController:vc animated:YES];
+    
+}
+
+-(void)showInfoViewController {
+    
+    InfoViewController *vc = [[InfoViewController alloc] init];
+    [self pushViewController:vc animated:YES];
+    
+}
 @end

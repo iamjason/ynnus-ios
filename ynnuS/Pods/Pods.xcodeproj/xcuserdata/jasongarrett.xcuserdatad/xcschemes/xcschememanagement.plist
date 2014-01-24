@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CZDateFormatterCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MagicalRecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2194BBAEFC494478A1ABC250</key>
+		<key>2B34AAA15F7F458BA40AD77F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2610792454914B7C8EC8A8E5</key>
+		<key>30F274755F11459A807D3028</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E0ECB4375DF459CAB57BED9</key>
+		<key>423C857B882042EEB71D5BBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEAFF076C36842519CC6B450</key>
+		<key>95AF6B8D1E2A46A6964BA411</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95BE69707B5541DAA52821A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

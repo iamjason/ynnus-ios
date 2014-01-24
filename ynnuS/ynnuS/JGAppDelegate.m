@@ -8,6 +8,9 @@
 
 #import "JGAppDelegate.h"
 #import "RootNavigationViewController.h"
+#import <TestFlightSDK/TestFlight.h>
+
+@import AVFoundation;
 
 @implementation JGAppDelegate
 
@@ -16,14 +19,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    [TestFlight takeOff:@"a58c96f6-5b90-48c0-ae47-db7f6d714cbd"];
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"ynnuS.v.1.0"];
     
+    //[self initAudioSession];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor darkGrayColor];
-    [self.window makeKeyAndVisible];
     
+    self.window.backgroundColor = UINAVIGATIONBAR_TINT_COLOR;
+    self.window.tintColor = UINAVIGATIONBAR_TITLE_COLOR;
+    
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    [[UINavigationBar appearance] setBarTintColor:UINAVIGATIONBAR_TINT_COLOR];
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           UINAVIGATIONBAR_TITLE_COLOR, NSForegroundColorAttributeName,
+                                                           FONT(20), NSFontAttributeName, nil]];
+    
+    [self.window makeKeyAndVisible];
     
     self.rootNavigationController = [[RootNavigationViewController alloc] init];
     self.window.rootViewController = self.rootNavigationController;
@@ -61,6 +75,26 @@
        
     
     }];
+    
+}
+
+
+#pragma mark - Application Initializations
+-(void)initAudioSession {
+    
+    // audio session
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    NSError *err = NULL;
+    
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:&err];
+    if( err ){
+        NSLog(@"!!!ERROR!!! creating audio session");
+    }
+    
+    [audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:NULL];
+    if( err ){
+        NSLog(@"!!!ERROR!!! sending the audio to the speakers");
+    }
     
 }
 

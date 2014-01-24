@@ -15,7 +15,6 @@
 		463028C11889EF4B00C520B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 463028C01889EF4B00C520B9 /* main.m */; };
 		463028C51889EF4B00C520B9 /* JGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 463028C41889EF4B00C520B9 /* JGAppDelegate.m */; };
 		463028C81889EF4B00C520B9 /* ynnuS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 463028C61889EF4B00C520B9 /* ynnuS.xcdatamodeld */; };
-		463028CA1889EF4B00C520B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463028C91889EF4B00C520B9 /* Images.xcassets */; };
 		463028D11889EF4B00C520B9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463028D01889EF4B00C520B9 /* XCTest.framework */; };
 		463028D21889EF4B00C520B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463028B21889EF4B00C520B9 /* Foundation.framework */; };
 		463028D31889EF4B00C520B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463028B61889EF4B00C520B9 /* UIKit.framework */; };
@@ -30,8 +29,44 @@
 		463028F31889F20900C520B9 /* SoundsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463028EF1889F20900C520B9 /* SoundsListTableViewController.m */; };
 		463028FC1889F75900C520B9 /* EmptySoundsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 463028FB1889F75900C520B9 /* EmptySoundsCell.m */; };
 		463028FD1889F75900C520B9 /* EmptySoundsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 463028FB1889F75900C520B9 /* EmptySoundsCell.m */; };
-		463029011889F84000C520B9 /* RecordSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463029001889F84000C520B9 /* RecordSoundViewController.m */; };
-		463029021889F84000C520B9 /* RecordSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463029001889F84000C520B9 /* RecordSoundViewController.m */; };
+		4650C968188F4368009CA1C0 /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4650C967188F4368009CA1C0 /* Record.storyboard */; };
+		4650C969188F4368009CA1C0 /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4650C967188F4368009CA1C0 /* Record.storyboard */; };
+		4650C96F188F43F1009CA1C0 /* RecordSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C96C188F43F1009CA1C0 /* RecordSoundViewController.m */; };
+		4650C970188F43F1009CA1C0 /* RecordSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C96C188F43F1009CA1C0 /* RecordSoundViewController.m */; };
+		4650C975188F45EA009CA1C0 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C974188F45EA009CA1C0 /* Globals.m */; };
+		4650C976188F45EA009CA1C0 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C974188F45EA009CA1C0 /* Globals.m */; };
+		4650C979188F551F009CA1C0 /* SoundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C978188F551F009CA1C0 /* SoundListCell.m */; };
+		4650C97A188F551F009CA1C0 /* SoundListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C978188F551F009CA1C0 /* SoundListCell.m */; };
+		4650C97C188F5534009CA1C0 /* SoundListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4650C97B188F5534009CA1C0 /* SoundListCell.xib */; };
+		4650C97D188F5534009CA1C0 /* SoundListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4650C97B188F5534009CA1C0 /* SoundListCell.xib */; };
+		4650C980188F5DD3009CA1C0 /* PlaySoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C97F188F5DD3009CA1C0 /* PlaySoundViewController.m */; };
+		4650C981188F5DD3009CA1C0 /* PlaySoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C97F188F5DD3009CA1C0 /* PlaySoundViewController.m */; };
+		4650C984188F5E0B009CA1C0 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4650C983188F5E0B009CA1C0 /* Play.storyboard */; };
+		4650C985188F5E0B009CA1C0 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4650C983188F5E0B009CA1C0 /* Play.storyboard */; };
+		46D6B0181891C19500792538 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B00B1891C19500792538 /* Icon-120.png */; };
+		46D6B0191891C19500792538 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B00C1891C19500792538 /* Icon-72.png */; };
+		46D6B01A1891C19500792538 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B00D1891C19500792538 /* Icon-72@2x.png */; };
+		46D6B01B1891C19500792538 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B00E1891C19500792538 /* Icon-76.png */; };
+		46D6B01C1891C19500792538 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B00F1891C19500792538 /* Icon-76@2x.png */; };
+		46D6B01D1891C19500792538 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0101891C19500792538 /* Icon-iPad-Spotlight-iOS7@2x.png */; };
+		46D6B01E1891C19500792538 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0111891C19500792538 /* Icon-Small-50.png */; };
+		46D6B01F1891C19500792538 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0121891C19500792538 /* Icon-Small.png */; };
+		46D6B0201891C19500792538 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0131891C19500792538 /* Icon-Small@2x.png */; };
+		46D6B0211891C19500792538 /* Icon-Spotlight-iOS7.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0141891C19500792538 /* Icon-Spotlight-iOS7.png */; };
+		46D6B0221891C19500792538 /* Icon-Spotlight-iOS7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0151891C19500792538 /* Icon-Spotlight-iOS7@2x.png */; };
+		46D6B0231891C19500792538 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0161891C19500792538 /* Icon.png */; };
+		46D6B0241891C19500792538 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0171891C19500792538 /* Icon@2x.png */; };
+		46D6B0371891C50F00792538 /* PushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D6B0321891C50F00792538 /* PushButton.m */; };
+		46D6B0391891C50F00792538 /* UIButton+Animations.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D6B0361891C50F00792538 /* UIButton+Animations.m */; };
+		46D6B0431891C6E200792538 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0421891C6E200792538 /* Images.xcassets */; };
+		46D6B04B1891C79500792538 /* Launch 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0441891C79500792538 /* Launch 5.png */; };
+		46D6B04C1891C79500792538 /* launch ipad landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0451891C79500792538 /* launch ipad landscape.png */; };
+		46D6B04D1891C79500792538 /* launch ipad landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0461891C79500792538 /* launch ipad landscape@2x.png */; };
+		46D6B04E1891C79500792538 /* launch ipad portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0471891C79500792538 /* launch ipad portrait.png */; };
+		46D6B04F1891C79500792538 /* launch ipad portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0481891C79500792538 /* launch ipad portrait@2x.png */; };
+		46D6B0501891C79500792538 /* Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0491891C79500792538 /* Launch.png */; };
+		46D6B0511891C79500792538 /* Launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B04A1891C79500792538 /* Launch@2x.png */; };
+		46EB85011891D25000D911AB /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB85001891D25000D911AB /* InfoViewController.m */; };
 		A725F7FF9B6C4D88AC9C683F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63105E7E3E2246D09FF68BAE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +93,6 @@
 		463028C31889EF4B00C520B9 /* JGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JGAppDelegate.h; sourceTree = "<group>"; };
 		463028C41889EF4B00C520B9 /* JGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JGAppDelegate.m; sourceTree = "<group>"; };
 		463028C71889EF4B00C520B9 /* ynnuS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ynnuS.xcdatamodel; sourceTree = "<group>"; };
-		463028C91889EF4B00C520B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		463028CF1889EF4B00C520B9 /* ynnuSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ynnuSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		463028D01889EF4B00C520B9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		463028D91889EF4B00C520B9 /* ynnuSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ynnuSTests-Info.plist"; sourceTree = "<group>"; };
@@ -72,8 +106,45 @@
 		463028EF1889F20900C520B9 /* SoundsListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundsListTableViewController.m; sourceTree = "<group>"; };
 		463028FA1889F75900C520B9 /* EmptySoundsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmptySoundsCell.h; path = ../_SOURCE/_CELLS/EmptySoundsCell.h; sourceTree = "<group>"; };
 		463028FB1889F75900C520B9 /* EmptySoundsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmptySoundsCell.m; path = ../_SOURCE/_CELLS/EmptySoundsCell.m; sourceTree = "<group>"; };
-		463028FF1889F84000C520B9 /* RecordSoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordSoundViewController.h; sourceTree = "<group>"; };
-		463029001889F84000C520B9 /* RecordSoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordSoundViewController.m; sourceTree = "<group>"; };
+		4650C967188F4368009CA1C0 /* Record.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Record.storyboard; path = _RECORD/Record.storyboard; sourceTree = "<group>"; };
+		4650C96B188F43F1009CA1C0 /* RecordSoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordSoundViewController.h; path = _RECORD/RecordSoundViewController.h; sourceTree = "<group>"; };
+		4650C96C188F43F1009CA1C0 /* RecordSoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordSoundViewController.m; path = _RECORD/RecordSoundViewController.m; sourceTree = "<group>"; };
+		4650C973188F45EA009CA1C0 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Globals.h; path = ../_SOURCE/_COMMON/Globals.h; sourceTree = "<group>"; };
+		4650C974188F45EA009CA1C0 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Globals.m; path = ../_SOURCE/_COMMON/Globals.m; sourceTree = "<group>"; };
+		4650C977188F551F009CA1C0 /* SoundListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundListCell.h; path = ../_SOURCE/_CELLS/SoundListCell.h; sourceTree = "<group>"; };
+		4650C978188F551F009CA1C0 /* SoundListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundListCell.m; path = ../_SOURCE/_CELLS/SoundListCell.m; sourceTree = "<group>"; };
+		4650C97B188F5534009CA1C0 /* SoundListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SoundListCell.xib; path = ../_SOURCE/_CELLS/SoundListCell.xib; sourceTree = "<group>"; };
+		4650C97E188F5DD3009CA1C0 /* PlaySoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaySoundViewController.h; path = _PLAY/PlaySoundViewController.h; sourceTree = "<group>"; };
+		4650C97F188F5DD3009CA1C0 /* PlaySoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaySoundViewController.m; path = _PLAY/PlaySoundViewController.m; sourceTree = "<group>"; };
+		4650C983188F5E0B009CA1C0 /* Play.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Play.storyboard; path = _PLAY/Play.storyboard; sourceTree = "<group>"; };
+		469F6AC7189203D6007866B7 /* ynnuS 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ynnuS 1.1.xcdatamodel"; sourceTree = "<group>"; };
+		46D6B00B1891C19500792538 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
+		46D6B00C1891C19500792538 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		46D6B00D1891C19500792538 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		46D6B00E1891C19500792538 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		46D6B00F1891C19500792538 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		46D6B0101891C19500792538 /* Icon-iPad-Spotlight-iOS7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad-Spotlight-iOS7@2x.png"; sourceTree = "<group>"; };
+		46D6B0111891C19500792538 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		46D6B0121891C19500792538 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		46D6B0131891C19500792538 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		46D6B0141891C19500792538 /* Icon-Spotlight-iOS7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-iOS7.png"; sourceTree = "<group>"; };
+		46D6B0151891C19500792538 /* Icon-Spotlight-iOS7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-iOS7@2x.png"; sourceTree = "<group>"; };
+		46D6B0161891C19500792538 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		46D6B0171891C19500792538 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		46D6B0311891C50F00792538 /* PushButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushButton.h; sourceTree = "<group>"; };
+		46D6B0321891C50F00792538 /* PushButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushButton.m; sourceTree = "<group>"; };
+		46D6B0351891C50F00792538 /* UIButton+Animations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Animations.h"; sourceTree = "<group>"; };
+		46D6B0361891C50F00792538 /* UIButton+Animations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Animations.m"; sourceTree = "<group>"; };
+		46D6B0421891C6E200792538 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		46D6B0441891C79500792538 /* Launch 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch 5.png"; sourceTree = "<group>"; };
+		46D6B0451891C79500792538 /* launch ipad landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch ipad landscape.png"; sourceTree = "<group>"; };
+		46D6B0461891C79500792538 /* launch ipad landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch ipad landscape@2x.png"; sourceTree = "<group>"; };
+		46D6B0471891C79500792538 /* launch ipad portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch ipad portrait.png"; sourceTree = "<group>"; };
+		46D6B0481891C79500792538 /* launch ipad portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch ipad portrait@2x.png"; sourceTree = "<group>"; };
+		46D6B0491891C79500792538 /* Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch.png; sourceTree = "<group>"; };
+		46D6B04A1891C79500792538 /* Launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch@2x.png"; sourceTree = "<group>"; };
+		46EB84FF1891D25000D911AB /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = _INFO/InfoViewController.h; sourceTree = "<group>"; };
+		46EB85001891D25000D911AB /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = _INFO/InfoViewController.m; sourceTree = "<group>"; };
 		63105E7E3E2246D09FF68BAE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13B8EF719D142BA82110DDD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +179,7 @@
 		463028A61889EF4B00C520B9 = {
 			isa = PBXGroup;
 			children = (
+				46D6B0091891C19500792538 /* _ASSETS */,
 				463028F41889F20E00C520B9 /* _SOURCE */,
 				463028BA1889EF4B00C520B9 /* ynnuS */,
 				463028D71889EF4B00C520B9 /* ynnuSTests */,
@@ -144,8 +216,8 @@
 			children = (
 				463028C31889EF4B00C520B9 /* JGAppDelegate.h */,
 				463028C41889EF4B00C520B9 /* JGAppDelegate.m */,
-				463028C91889EF4B00C520B9 /* Images.xcassets */,
 				463028C61889EF4B00C520B9 /* ynnuS.xcdatamodeld */,
+				46D6B0421891C6E200792538 /* Images.xcassets */,
 				463028BB1889EF4B00C520B9 /* Supporting Files */,
 			);
 			path = ynnuS;
@@ -187,8 +259,9 @@
 				463028ED1889F20900C520B9 /* RootNavigationViewController.m */,
 				463028EE1889F20900C520B9 /* SoundsListTableViewController.h */,
 				463028EF1889F20900C520B9 /* SoundsListTableViewController.m */,
-				463028FF1889F84000C520B9 /* RecordSoundViewController.h */,
-				463029001889F84000C520B9 /* RecordSoundViewController.m */,
+				4650C96A188F436C009CA1C0 /* _RECORD */,
+				4650C982188F5DDA009CA1C0 /* _PLAY */,
+				46EB85021891D26200D911AB /* _INFO */,
 			);
 			name = _CONTROLLERS;
 			path = ../_SOURCE/_CONTROLLERS;
@@ -197,9 +270,12 @@
 		463028F41889F20E00C520B9 /* _SOURCE */ = {
 			isa = PBXGroup;
 			children = (
+				46D6B0301891C50F00792538 /* _BUTTONS */,
 				463028F51889F21400C520B9 /* _MODELS */,
 				463028EB1889F20900C520B9 /* _CONTROLLERS */,
 				463028FE1889F75C00C520B9 /* _CELLS */,
+				4650C973188F45EA009CA1C0 /* Globals.h */,
+				4650C974188F45EA009CA1C0 /* Globals.m */,
 			);
 			name = _SOURCE;
 			sourceTree = "<group>";
@@ -219,8 +295,96 @@
 			children = (
 				463028FA1889F75900C520B9 /* EmptySoundsCell.h */,
 				463028FB1889F75900C520B9 /* EmptySoundsCell.m */,
+				4650C977188F551F009CA1C0 /* SoundListCell.h */,
+				4650C978188F551F009CA1C0 /* SoundListCell.m */,
+				4650C97B188F5534009CA1C0 /* SoundListCell.xib */,
 			);
 			name = _CELLS;
+			sourceTree = "<group>";
+		};
+		4650C96A188F436C009CA1C0 /* _RECORD */ = {
+			isa = PBXGroup;
+			children = (
+				4650C96B188F43F1009CA1C0 /* RecordSoundViewController.h */,
+				4650C96C188F43F1009CA1C0 /* RecordSoundViewController.m */,
+				4650C967188F4368009CA1C0 /* Record.storyboard */,
+			);
+			name = _RECORD;
+			sourceTree = "<group>";
+		};
+		4650C982188F5DDA009CA1C0 /* _PLAY */ = {
+			isa = PBXGroup;
+			children = (
+				4650C983188F5E0B009CA1C0 /* Play.storyboard */,
+				4650C97E188F5DD3009CA1C0 /* PlaySoundViewController.h */,
+				4650C97F188F5DD3009CA1C0 /* PlaySoundViewController.m */,
+			);
+			name = _PLAY;
+			sourceTree = "<group>";
+		};
+		46D6B0091891C19500792538 /* _ASSETS */ = {
+			isa = PBXGroup;
+			children = (
+				46D6B0251891C3B000792538 /* _LAUNCH */,
+				46D6B00A1891C19500792538 /* _ICONS */,
+			);
+			name = _ASSETS;
+			path = ../_ASSETS;
+			sourceTree = "<group>";
+		};
+		46D6B00A1891C19500792538 /* _ICONS */ = {
+			isa = PBXGroup;
+			children = (
+				46D6B00B1891C19500792538 /* Icon-120.png */,
+				46D6B00C1891C19500792538 /* Icon-72.png */,
+				46D6B00D1891C19500792538 /* Icon-72@2x.png */,
+				46D6B00E1891C19500792538 /* Icon-76.png */,
+				46D6B00F1891C19500792538 /* Icon-76@2x.png */,
+				46D6B0101891C19500792538 /* Icon-iPad-Spotlight-iOS7@2x.png */,
+				46D6B0111891C19500792538 /* Icon-Small-50.png */,
+				46D6B0121891C19500792538 /* Icon-Small.png */,
+				46D6B0131891C19500792538 /* Icon-Small@2x.png */,
+				46D6B0141891C19500792538 /* Icon-Spotlight-iOS7.png */,
+				46D6B0151891C19500792538 /* Icon-Spotlight-iOS7@2x.png */,
+				46D6B0161891C19500792538 /* Icon.png */,
+				46D6B0171891C19500792538 /* Icon@2x.png */,
+			);
+			path = _ICONS;
+			sourceTree = "<group>";
+		};
+		46D6B0251891C3B000792538 /* _LAUNCH */ = {
+			isa = PBXGroup;
+			children = (
+				46D6B0441891C79500792538 /* Launch 5.png */,
+				46D6B0451891C79500792538 /* launch ipad landscape.png */,
+				46D6B0461891C79500792538 /* launch ipad landscape@2x.png */,
+				46D6B0471891C79500792538 /* launch ipad portrait.png */,
+				46D6B0481891C79500792538 /* launch ipad portrait@2x.png */,
+				46D6B0491891C79500792538 /* Launch.png */,
+				46D6B04A1891C79500792538 /* Launch@2x.png */,
+			);
+			path = _LAUNCH;
+			sourceTree = "<group>";
+		};
+		46D6B0301891C50F00792538 /* _BUTTONS */ = {
+			isa = PBXGroup;
+			children = (
+				46D6B0311891C50F00792538 /* PushButton.h */,
+				46D6B0321891C50F00792538 /* PushButton.m */,
+				46D6B0351891C50F00792538 /* UIButton+Animations.h */,
+				46D6B0361891C50F00792538 /* UIButton+Animations.m */,
+			);
+			name = _BUTTONS;
+			path = ../_SOURCE/_BUTTONS;
+			sourceTree = "<group>";
+		};
+		46EB85021891D26200D911AB /* _INFO */ = {
+			isa = PBXGroup;
+			children = (
+				46EB84FF1891D25000D911AB /* InfoViewController.h */,
+				46EB85001891D25000D911AB /* InfoViewController.m */,
+			);
+			name = _INFO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +437,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Ulnar Nerve LLC";
 				TargetAttributes = {
+					463028AE1889EF4B00C520B9 = {
+						DevelopmentTeam = F89HU4XKQS;
+					};
 					463028CE1889EF4B00C520B9 = {
 						TestTargetID = 463028AE1889EF4B00C520B9;
 					};
@@ -301,8 +468,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D6B0501891C79500792538 /* Launch.png in Resources */,
+				46D6B04C1891C79500792538 /* launch ipad landscape.png in Resources */,
+				46D6B04E1891C79500792538 /* launch ipad portrait.png in Resources */,
+				46D6B0231891C19500792538 /* Icon.png in Resources */,
+				46D6B0241891C19500792538 /* Icon@2x.png in Resources */,
+				46D6B04F1891C79500792538 /* launch ipad portrait@2x.png in Resources */,
+				4650C968188F4368009CA1C0 /* Record.storyboard in Resources */,
+				46D6B01D1891C19500792538 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				463028BF1889EF4B00C520B9 /* InfoPlist.strings in Resources */,
-				463028CA1889EF4B00C520B9 /* Images.xcassets in Resources */,
+				46D6B0211891C19500792538 /* Icon-Spotlight-iOS7.png in Resources */,
+				46D6B01F1891C19500792538 /* Icon-Small.png in Resources */,
+				46D6B01A1891C19500792538 /* Icon-72@2x.png in Resources */,
+				46D6B0511891C79500792538 /* Launch@2x.png in Resources */,
+				4650C97C188F5534009CA1C0 /* SoundListCell.xib in Resources */,
+				46D6B0431891C6E200792538 /* Images.xcassets in Resources */,
+				46D6B0181891C19500792538 /* Icon-120.png in Resources */,
+				46D6B0191891C19500792538 /* Icon-72.png in Resources */,
+				46D6B0221891C19500792538 /* Icon-Spotlight-iOS7@2x.png in Resources */,
+				4650C984188F5E0B009CA1C0 /* Play.storyboard in Resources */,
+				46D6B04B1891C79500792538 /* Launch 5.png in Resources */,
+				46D6B01E1891C19500792538 /* Icon-Small-50.png in Resources */,
+				46D6B01C1891C19500792538 /* Icon-76@2x.png in Resources */,
+				46D6B04D1891C79500792538 /* launch ipad landscape@2x.png in Resources */,
+				46D6B01B1891C19500792538 /* Icon-76.png in Resources */,
+				46D6B0201891C19500792538 /* Icon-Small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +500,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4650C985188F5E0B009CA1C0 /* Play.storyboard in Resources */,
 				463028DC1889EF4B00C520B9 /* InfoPlist.strings in Resources */,
+				4650C969188F4368009CA1C0 /* Record.storyboard in Resources */,
+				4650C97D188F5534009CA1C0 /* SoundListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,11 +549,17 @@
 			files = (
 				463028FC1889F75900C520B9 /* EmptySoundsCell.m in Sources */,
 				463028F01889F20900C520B9 /* RootNavigationViewController.m in Sources */,
+				4650C980188F5DD3009CA1C0 /* PlaySoundViewController.m in Sources */,
+				46D6B0371891C50F00792538 /* PushButton.m in Sources */,
+				46D6B0391891C50F00792538 /* UIButton+Animations.m in Sources */,
+				4650C979188F551F009CA1C0 /* SoundListCell.m in Sources */,
 				463028F21889F20900C520B9 /* SoundsListTableViewController.m in Sources */,
 				463028C11889EF4B00C520B9 /* main.m in Sources */,
 				463028C51889EF4B00C520B9 /* JGAppDelegate.m in Sources */,
-				463029011889F84000C520B9 /* RecordSoundViewController.m in Sources */,
+				4650C96F188F43F1009CA1C0 /* RecordSoundViewController.m in Sources */,
 				463028C81889EF4B00C520B9 /* ynnuS.xcdatamodeld in Sources */,
+				4650C975188F45EA009CA1C0 /* Globals.m in Sources */,
+				46EB85011891D25000D911AB /* InfoViewController.m in Sources */,
 				463028E91889F00600C520B9 /* Sound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,10 +568,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4650C976188F45EA009CA1C0 /* Globals.m in Sources */,
+				4650C97A188F551F009CA1C0 /* SoundListCell.m in Sources */,
 				463028F11889F20900C520B9 /* RootNavigationViewController.m in Sources */,
 				463028F31889F20900C520B9 /* SoundsListTableViewController.m in Sources */,
+				4650C981188F5DD3009CA1C0 /* PlaySoundViewController.m in Sources */,
 				463028DE1889EF4B00C520B9 /* ynnuSTests.m in Sources */,
-				463029021889F84000C520B9 /* RecordSoundViewController.m in Sources */,
+				4650C970188F43F1009CA1C0 /* RecordSoundViewController.m in Sources */,
 				463028EA1889F00600C520B9 /* Sound.m in Sources */,
 				463028FD1889F75900C520B9 /* EmptySoundsCell.m in Sources */,
 			);
@@ -488,10 +690,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jason Garrett (WXUSAVY2J6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jason Garrett (WXUSAVY2J6)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ynnuS/ynnuS-Prefix.pch";
 				INFOPLIST_FILE = "ynnuS/ynnuS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1128C47B-46DC-45E2-A00A-FB87707FD124";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -502,10 +707,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jason Garrett (F89HU4XKQS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jason Garrett (F89HU4XKQS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ynnuS/ynnuS-Prefix.pch";
 				INFOPLIST_FILE = "ynnuS/ynnuS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FAE2A33B-1E64-4B18-AD13-81B3BD86DDED";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -588,6 +796,7 @@
 		463028C61889EF4B00C520B9 /* ynnuS.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				469F6AC7189203D6007866B7 /* ynnuS 1.1.xcdatamodel */,
 				463028C71889EF4B00C520B9 /* ynnuS.xcdatamodel */,
 			);
 			currentVersion = 463028C71889EF4B00C520B9 /* ynnuS.xcdatamodel */;

@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 1
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
 
+// CZDateFormatterCache
+#define COCOAPODS_POD_AVAILABLE_CZDateFormatterCache
+#define COCOAPODS_VERSION_MAJOR_CZDateFormatterCache 1
+#define COCOAPODS_VERSION_MINOR_CZDateFormatterCache 2
+#define COCOAPODS_VERSION_PATCH_CZDateFormatterCache 0
+
 // MagicalRecord
 #define COCOAPODS_POD_AVAILABLE_MagicalRecord
 #define COCOAPODS_VERSION_MAJOR_MagicalRecord 2

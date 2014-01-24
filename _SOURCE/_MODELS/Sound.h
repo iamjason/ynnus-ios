@@ -17,4 +17,9 @@
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * originalRecordingLocation;
 
+@property (nonatomic,readonly) NSString *fileNameOriginal;
+@property (nonatomic,readonly) NSString *fileNameReversed;
+@property (nonatomic,readonly) NSURL *audioURLOriginal;
+@property (nonatomic,readonly) NSURL *audioURLReversed;
+
 @end
