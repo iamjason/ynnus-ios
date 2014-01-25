@@ -13,7 +13,7 @@
 -(void)layoutSubviews {
     [super layoutSubviews];
     self.backgroundColor =
-    self.contentView.backgroundColor = VIEW_BACKGROUND_COLOR;
+    self.contentView.backgroundColor = COLOR_VIEW_BACKGROUND;
 }
 
 @end

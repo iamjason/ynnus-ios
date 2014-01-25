@@ -19,6 +19,11 @@
 @interface SoundsListTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *sounds;
+@property (nonatomic, strong) UIView *infoView;
+
+@property (nonatomic, assign) BOOL isShowingInfo;
+@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeDown;
 
 @end
 
@@ -37,7 +42,7 @@
 {
     [super viewDidLoad];
 
-    self.view.backgroundColor = VIEW_BACKGROUND_COLOR;
+    self.view.backgroundColor = COLOR_VIEW_BACKGROUND;
     
     self.title = NSLocalizedString(@"ynnuƧ", @"SoundsListTable Header");
     [self.tableView registerNib:[UINib nibWithNibName:@"SoundListCell"  bundle:nil]
@@ -52,31 +57,37 @@
 
     [super viewWillAppear:animated];
     
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NavBarLogo"]];
+    self.navigationItem.title = @"";
 //    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(_addSound:)];
 //    self.navigationItem.rightBarButtonItem = addItem;
     PushButton *addButton = [PushButton buttonWithType:UIButtonTypeCustom];
-    addButton.frame = CGRectMake(0, 0, 58, 40);
+    addButton.frame = CGRectMake(0, 0, 48, 40);
     [[addButton titleLabel] setFont:FONT(18)];
     [[addButton titleLabel] setTextColor:[UIColor whiteColor]];
     [addButton setTitle:@"New" forState:UIControlStateNormal];
     [addButton addTarget:self action:@selector(_addSound:) forControlEvents:UIControlEventTouchUpInside];
     
-    addButton.backgroundColor = COLOR_BUTTON_BLUE;
+    addButton.backgroundColor = [UIColor clearColor];//COLOR_BUTTON_THIRD;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
     
     
     PushButton *infoButton = [PushButton buttonWithType:UIButtonTypeCustom];
-    infoButton.frame = CGRectMake(0, 0, 58, 40);
+    infoButton.frame = CGRectMake(0, 0, 70, 40);
     [[infoButton titleLabel] setFont:FONT(18)];
     [[infoButton titleLabel] setTextColor:[UIColor whiteColor]];
-    [infoButton setTitle:@"Info" forState:UIControlStateNormal];
-    infoButton.backgroundColor = COLOR_BUTTON_GREEN;
+    [infoButton setTitle:@"Settings" forState:UIControlStateNormal];
+    infoButton.backgroundColor = [UIColor clearColor];
+    //COLOR_BUTTON_SECONDARY;
     [infoButton addTarget:self action:@selector(_showInfo:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-    
     [self reload];
+   
     
+}
+-(void)viewDidAppear:(BOOL)animated {
+     [self reload];
 }
 
 -(NSMutableArray*)sounds {

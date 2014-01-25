@@ -22,4 +22,7 @@
 @property (nonatomic,readonly) NSURL *audioURLOriginal;
 @property (nonatomic,readonly) NSURL *audioURLReversed;
 
+
+-(void)deleteSound;
+
 @end

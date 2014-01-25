@@ -161,14 +161,15 @@
                                     <action selector="_saveRecording:" destination="u0Z-eV-zaW" eventType="touchUpInside" id="Za0-AB-dty"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MySound 1" borderStyle="line" placeholder="Filename" textAlignment="center" minimumFontSize="17" id="sfq-qs-PhV">
-                                <rect key="frame" x="24" y="98" width="280" height="48"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Filename" textAlignment="center" minimumFontSize="17" id="sfq-qs-PhV">
+                                <rect key="frame" x="24" y="81" width="280" height="70"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="filenameTextField" destination="sfq-qs-PhV" id="k8x-rT-l9N"/>

@@ -12,7 +12,11 @@
 
 #import "RecordSoundViewController.h"
 #import "PlaySoundViewController.h"
-#import "InfoViewController.h"
+
+#import "RemoteHTMLViewController.h"
+
+#import "SettingsTableViewController.h"
+
 @interface RootNavigationViewController ()
 
 @end
@@ -52,7 +56,17 @@
 
 -(void)showInfoViewController {
     
-    InfoViewController *vc = [[InfoViewController alloc] init];
+    SettingsTableViewController *vc = [[UIStoryboard storyboardWithName:@"Info" bundle:nil] instantiateViewControllerWithIdentifier:@"SettingsTableViewController"];
+    [self pushViewController:vc animated:YES];
+    
+}
+
+
+-(void)showRemoteHTMLViewController:(NSURL*)aURL navTitle:(NSString*)navTitle {
+    
+    RemoteHTMLViewController *vc = [[UIStoryboard storyboardWithName:@"Info" bundle:nil] instantiateViewControllerWithIdentifier:@"RemoteHTMLViewController"];
+    vc.url = aURL;
+    vc.title = navTitle;
     [self pushViewController:vc animated:YES];
     
 }

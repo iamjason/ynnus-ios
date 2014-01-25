@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoViewController : UIViewController
+@interface RemoteHTMLViewController : UIViewController
+
+@property (nonatomic, strong) NSURL *url;
 
 @end

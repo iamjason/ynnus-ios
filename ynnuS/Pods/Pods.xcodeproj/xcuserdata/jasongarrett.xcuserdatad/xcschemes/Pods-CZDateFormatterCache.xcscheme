@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "423C857B882042EEB71D5BBC"
+               BlueprintIdentifier = "61D7F25F4849425F8918955C"
                BuildableName = "libPods-CZDateFormatterCache.a"
                BlueprintName = "Pods-CZDateFormatterCache"
                ReferencedContainer = "container:Pods.xcodeproj">

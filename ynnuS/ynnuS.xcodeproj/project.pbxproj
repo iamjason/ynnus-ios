@@ -43,6 +43,14 @@
 		4650C981188F5DD3009CA1C0 /* PlaySoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4650C97F188F5DD3009CA1C0 /* PlaySoundViewController.m */; };
 		4650C984188F5E0B009CA1C0 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4650C983188F5E0B009CA1C0 /* Play.storyboard */; };
 		4650C985188F5E0B009CA1C0 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4650C983188F5E0B009CA1C0 /* Play.storyboard */; };
+		4677D95718924EF2009C6A12 /* NavBarLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4677D95518924EF2009C6A12 /* NavBarLogo.png */; };
+		4677D95818924EF2009C6A12 /* NavBarLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4677D95618924EF2009C6A12 /* NavBarLogo@2x.png */; };
+		468EF6391893752600F3D025 /* AppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468EF6381893752600F3D025 /* AppearanceViewController.m */; };
+		469567AB189298090085C0AF /* FDWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 469567AA189298090085C0AF /* FDWaveformView.m */; };
+		469567AC189298090085C0AF /* FDWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 469567AA189298090085C0AF /* FDWaveformView.m */; };
+		46D2A8A41893551600A65950 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46D2A8A31893551600A65950 /* Info.storyboard */; };
+		46D2A8A71893565800A65950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D2A8A61893565800A65950 /* SettingsTableViewController.m */; };
+		46D2A8A81893565800A65950 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D2A8A61893565800A65950 /* SettingsTableViewController.m */; };
 		46D6B0181891C19500792538 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B00B1891C19500792538 /* Icon-120.png */; };
 		46D6B0191891C19500792538 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B00C1891C19500792538 /* Icon-72.png */; };
 		46D6B01A1891C19500792538 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B00D1891C19500792538 /* Icon-72@2x.png */; };
@@ -66,7 +74,7 @@
 		46D6B04F1891C79500792538 /* launch ipad portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0481891C79500792538 /* launch ipad portrait@2x.png */; };
 		46D6B0501891C79500792538 /* Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B0491891C79500792538 /* Launch.png */; };
 		46D6B0511891C79500792538 /* Launch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6B04A1891C79500792538 /* Launch@2x.png */; };
-		46EB85011891D25000D911AB /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB85001891D25000D911AB /* InfoViewController.m */; };
+		46EB85011891D25000D911AB /* RemoteHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB85001891D25000D911AB /* RemoteHTMLViewController.m */; };
 		A725F7FF9B6C4D88AC9C683F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63105E7E3E2246D09FF68BAE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -117,7 +125,17 @@
 		4650C97E188F5DD3009CA1C0 /* PlaySoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaySoundViewController.h; path = _PLAY/PlaySoundViewController.h; sourceTree = "<group>"; };
 		4650C97F188F5DD3009CA1C0 /* PlaySoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaySoundViewController.m; path = _PLAY/PlaySoundViewController.m; sourceTree = "<group>"; };
 		4650C983188F5E0B009CA1C0 /* Play.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Play.storyboard; path = _PLAY/Play.storyboard; sourceTree = "<group>"; };
-		469F6AC7189203D6007866B7 /* ynnuS 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ynnuS 1.1.xcdatamodel"; sourceTree = "<group>"; };
+		4677D95518924EF2009C6A12 /* NavBarLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarLogo.png; sourceTree = "<group>"; };
+		4677D95618924EF2009C6A12 /* NavBarLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarLogo@2x.png"; sourceTree = "<group>"; };
+		468EF6371893752600F3D025 /* AppearanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppearanceViewController.h; path = _INFO/AppearanceViewController.h; sourceTree = "<group>"; };
+		468EF6381893752600F3D025 /* AppearanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppearanceViewController.m; path = _INFO/AppearanceViewController.m; sourceTree = "<group>"; };
+		468EF63A1893842B00F3D025 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		469567A9189298090085C0AF /* FDWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDWaveformView.h; sourceTree = "<group>"; };
+		469567AA189298090085C0AF /* FDWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDWaveformView.m; sourceTree = "<group>"; };
+		469F6AC7189203D6007866B7 /* ynnuS 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ynnuS 1.1.xcdatamodel"; sourceTree = "<group>"; };
+		46D2A8A31893551600A65950 /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Info.storyboard; path = _INFO/Info.storyboard; sourceTree = "<group>"; };
+		46D2A8A51893565800A65950 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = _INFO/SettingsTableViewController.h; sourceTree = "<group>"; };
+		46D2A8A61893565800A65950 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewController.m; path = _INFO/SettingsTableViewController.m; sourceTree = "<group>"; };
 		46D6B00B1891C19500792538 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 		46D6B00C1891C19500792538 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		46D6B00D1891C19500792538 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -143,8 +161,8 @@
 		46D6B0481891C79500792538 /* launch ipad portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch ipad portrait@2x.png"; sourceTree = "<group>"; };
 		46D6B0491891C79500792538 /* Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch.png; sourceTree = "<group>"; };
 		46D6B04A1891C79500792538 /* Launch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch@2x.png"; sourceTree = "<group>"; };
-		46EB84FF1891D25000D911AB /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = _INFO/InfoViewController.h; sourceTree = "<group>"; };
-		46EB85001891D25000D911AB /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = _INFO/InfoViewController.m; sourceTree = "<group>"; };
+		46EB84FF1891D25000D911AB /* RemoteHTMLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteHTMLViewController.h; path = _INFO/RemoteHTMLViewController.h; sourceTree = "<group>"; };
+		46EB85001891D25000D911AB /* RemoteHTMLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteHTMLViewController.m; path = _INFO/RemoteHTMLViewController.m; sourceTree = "<group>"; };
 		63105E7E3E2246D09FF68BAE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13B8EF719D142BA82110DDD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +244,7 @@
 		463028BB1889EF4B00C520B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				468EF63A1893842B00F3D025 /* Podfile */,
 				463028BC1889EF4B00C520B9 /* ynnuS-Info.plist */,
 				463028BD1889EF4B00C520B9 /* InfoPlist.strings */,
 				463028C01889EF4B00C520B9 /* main.m */,
@@ -270,6 +289,7 @@
 		463028F41889F20E00C520B9 /* _SOURCE */ = {
 			isa = PBXGroup;
 			children = (
+				469567A7189298090085C0AF /* _LIBRARIES */,
 				46D6B0301891C50F00792538 /* _BUTTONS */,
 				463028F51889F21400C520B9 /* _MODELS */,
 				463028EB1889F20900C520B9 /* _CONTROLLERS */,
@@ -322,9 +342,37 @@
 			name = _PLAY;
 			sourceTree = "<group>";
 		};
+		4677D95018924E7A009C6A12 /* _IMAGES */ = {
+			isa = PBXGroup;
+			children = (
+				4677D95518924EF2009C6A12 /* NavBarLogo.png */,
+				4677D95618924EF2009C6A12 /* NavBarLogo@2x.png */,
+			);
+			path = _IMAGES;
+			sourceTree = "<group>";
+		};
+		469567A7189298090085C0AF /* _LIBRARIES */ = {
+			isa = PBXGroup;
+			children = (
+				469567A8189298090085C0AF /* FDWaveformView */,
+			);
+			name = _LIBRARIES;
+			path = ../_SOURCE/_LIBRARIES;
+			sourceTree = "<group>";
+		};
+		469567A8189298090085C0AF /* FDWaveformView */ = {
+			isa = PBXGroup;
+			children = (
+				469567A9189298090085C0AF /* FDWaveformView.h */,
+				469567AA189298090085C0AF /* FDWaveformView.m */,
+			);
+			path = FDWaveformView;
+			sourceTree = "<group>";
+		};
 		46D6B0091891C19500792538 /* _ASSETS */ = {
 			isa = PBXGroup;
 			children = (
+				4677D95018924E7A009C6A12 /* _IMAGES */,
 				46D6B0251891C3B000792538 /* _LAUNCH */,
 				46D6B00A1891C19500792538 /* _ICONS */,
 			);
@@ -381,8 +429,13 @@
 		46EB85021891D26200D911AB /* _INFO */ = {
 			isa = PBXGroup;
 			children = (
-				46EB84FF1891D25000D911AB /* InfoViewController.h */,
-				46EB85001891D25000D911AB /* InfoViewController.m */,
+				46D2A8A51893565800A65950 /* SettingsTableViewController.h */,
+				46D2A8A61893565800A65950 /* SettingsTableViewController.m */,
+				46EB84FF1891D25000D911AB /* RemoteHTMLViewController.h */,
+				46EB85001891D25000D911AB /* RemoteHTMLViewController.m */,
+				46D2A8A31893551600A65950 /* Info.storyboard */,
+				468EF6371893752600F3D025 /* AppearanceViewController.h */,
+				468EF6381893752600F3D025 /* AppearanceViewController.m */,
 			);
 			name = _INFO;
 			sourceTree = "<group>";
@@ -488,6 +541,9 @@
 				46D6B0221891C19500792538 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				4650C984188F5E0B009CA1C0 /* Play.storyboard in Resources */,
 				46D6B04B1891C79500792538 /* Launch 5.png in Resources */,
+				4677D95718924EF2009C6A12 /* NavBarLogo.png in Resources */,
+				4677D95818924EF2009C6A12 /* NavBarLogo@2x.png in Resources */,
+				46D2A8A41893551600A65950 /* Info.storyboard in Resources */,
 				46D6B01E1891C19500792538 /* Icon-Small-50.png in Resources */,
 				46D6B01C1891C19500792538 /* Icon-76@2x.png in Resources */,
 				46D6B04D1891C79500792538 /* launch ipad landscape@2x.png in Resources */,
@@ -547,8 +603,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D2A8A71893565800A65950 /* SettingsTableViewController.m in Sources */,
 				463028FC1889F75900C520B9 /* EmptySoundsCell.m in Sources */,
+				468EF6391893752600F3D025 /* AppearanceViewController.m in Sources */,
 				463028F01889F20900C520B9 /* RootNavigationViewController.m in Sources */,
+				469567AB189298090085C0AF /* FDWaveformView.m in Sources */,
 				4650C980188F5DD3009CA1C0 /* PlaySoundViewController.m in Sources */,
 				46D6B0371891C50F00792538 /* PushButton.m in Sources */,
 				46D6B0391891C50F00792538 /* UIButton+Animations.m in Sources */,
@@ -559,7 +618,7 @@
 				4650C96F188F43F1009CA1C0 /* RecordSoundViewController.m in Sources */,
 				463028C81889EF4B00C520B9 /* ynnuS.xcdatamodeld in Sources */,
 				4650C975188F45EA009CA1C0 /* Globals.m in Sources */,
-				46EB85011891D25000D911AB /* InfoViewController.m in Sources */,
+				46EB85011891D25000D911AB /* RemoteHTMLViewController.m in Sources */,
 				463028E91889F00600C520B9 /* Sound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,7 +634,9 @@
 				4650C981188F5DD3009CA1C0 /* PlaySoundViewController.m in Sources */,
 				463028DE1889EF4B00C520B9 /* ynnuSTests.m in Sources */,
 				4650C970188F43F1009CA1C0 /* RecordSoundViewController.m in Sources */,
+				469567AC189298090085C0AF /* FDWaveformView.m in Sources */,
 				463028EA1889F00600C520B9 /* Sound.m in Sources */,
+				46D2A8A81893565800A65950 /* SettingsTableViewController.m in Sources */,
 				463028FD1889F75900C520B9 /* EmptySoundsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,13 +751,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jason Garrett (WXUSAVY2J6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jason Garrett (WXUSAVY2J6)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ynnuS/ynnuS-Prefix.pch";
 				INFOPLIST_FILE = "ynnuS/ynnuS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1128C47B-46DC-45E2-A00A-FB87707FD124";
+				PROVISIONING_PROFILE = "C42F4BB3-C23A-4589-85D5-3F985BBE30E9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -707,13 +768,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jason Garrett (F89HU4XKQS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jason Garrett (F89HU4XKQS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ynnuS/ynnuS-Prefix.pch";
 				INFOPLIST_FILE = "ynnuS/ynnuS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FAE2A33B-1E64-4B18-AD13-81B3BD86DDED";
+				PROVISIONING_PROFILE = "6F81084D-EBE6-41E5-9882-6E53A8949634";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

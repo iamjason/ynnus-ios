@@ -54,11 +54,23 @@
 #define COCOAPODS_VERSION_MINOR_CZDateFormatterCache 2
 #define COCOAPODS_VERSION_PATCH_CZDateFormatterCache 0
 
+// InfColorPicker
+#define COCOAPODS_POD_AVAILABLE_InfColorPicker
+#define COCOAPODS_VERSION_MAJOR_InfColorPicker 0
+#define COCOAPODS_VERSION_MINOR_InfColorPicker 0
+#define COCOAPODS_VERSION_PATCH_InfColorPicker 1
+
 // MagicalRecord
 #define COCOAPODS_POD_AVAILABLE_MagicalRecord
 #define COCOAPODS_VERSION_MAJOR_MagicalRecord 2
 #define COCOAPODS_VERSION_MINOR_MagicalRecord 2
 #define COCOAPODS_VERSION_PATCH_MagicalRecord 0
+
+// ProgressHUD
+#define COCOAPODS_POD_AVAILABLE_ProgressHUD
+#define COCOAPODS_VERSION_MAJOR_ProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_ProgressHUD 0
+#define COCOAPODS_VERSION_PATCH_ProgressHUD 1
 
 // TestFlightSDK
 #define COCOAPODS_POD_AVAILABLE_TestFlightSDK

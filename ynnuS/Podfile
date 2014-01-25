@@ -9,3 +9,7 @@ pod 'MagicalRecord'
 pod 'TestFlightSDK'
 pod 'AFNetworking'
 pod 'CZDateFormatterCache'
+pod 'ProgressHUD'
+pod 'InfColorPicker'
+
+#pod 'TheAmazingAudioEngine'

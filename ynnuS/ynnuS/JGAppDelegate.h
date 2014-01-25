@@ -17,4 +17,8 @@
 
 - (NSURL *)applicationDocumentsDirectory;
 
+
+-(void)showHud:(NSString*)message;
+-(void)hideHud;
+
 @end

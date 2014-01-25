@@ -32,7 +32,7 @@
     
 //    [self addTarget:self action:@selector(_animateButtonDown:) forControlEvents:UIControlEventTouchDown];
 
-    self.backgroundColor = COLOR_BUTTON_BLUE;
+    self.backgroundColor = COLOR_BUTTON_PRIMARY;
     //[UIColor colorWithRed:0.996 green:0.922 blue:0.176 alpha:1.000];
     [self.titleLabel setTextColor:[UIColor blackColor]];
     self.layer.cornerRadius = 8;

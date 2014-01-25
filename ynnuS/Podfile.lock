@@ -18,19 +18,25 @@ PODS:
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
   - CZDateFormatterCache (1.2)
+  - InfColorPicker (0.0.1)
   - MagicalRecord (2.2)
+  - ProgressHUD (0.0.1)
   - TestFlightSDK (2.2.1-beta)
 
 DEPENDENCIES:
   - AFNetworking
   - CZDateFormatterCache
+  - InfColorPicker
   - MagicalRecord
+  - ProgressHUD
   - TestFlightSDK
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   CZDateFormatterCache: b6977e68eb5cb76ac0880eeb0d58130038461fe1
+  InfColorPicker: 9e227d7ca1eae5bcbeecca138190674b0c3d3a4f
   MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
+  ProgressHUD: f09230ed14bb5748367f458e6f90e7c1f67e6c8f
   TestFlightSDK: 4249c2f70e621bcfbdebf019073169c8fe36be13
 
 COCOAPODS: 0.29.0

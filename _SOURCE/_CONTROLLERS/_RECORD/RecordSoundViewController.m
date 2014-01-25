@@ -16,12 +16,20 @@
 
 @property (nonatomic,assign) RecordUIStates currentState;
 
-/**
- The recorder
- */
-@property (nonatomic,strong) AVAudioRecorder *recorder;
 
-@property (nonatomic,strong) AVAudioPlayer *player;
+@property (strong) AVAudioSession *session;
+@property (strong) AVAudioRecorder *recorder;
+@property (strong) AVAudioPlayer *player;
+@property (strong) NSURL *audioURLOriginal;
+@property (strong) NSURL *audioURLReversed;
+
+@property (assign) BOOL hasSavedAudio;
+
+//@property (nonatomic,strong) AVAudioSession *session;
+//
+//@property (nonatomic,strong) AVAudioRecorder *recorder;
+//
+//@property (nonatomic,strong) AVAudioPlayer *player;
 
 @property (strong, nonatomic) IBOutlet UIButton *stopButton;
 
@@ -35,73 +43,74 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *filenameTextField;
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
+
+
 @end
 
 @implementation RecordSoundViewController
 
+@synthesize session;
+@synthesize recorder;
+@synthesize player;
+@synthesize audioURLOriginal;
+@synthesize audioURLReversed;
+
 @synthesize soundModel;
 
--(instancetype)init {
-    
-    self = [super init];
-    if (self) {
-        [self initVC];
-    }
-    return self;
-    
-}
-
--(void) initVC {
-    
-}
-
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    self.view.backgroundColor = VIEW_BACKGROUND_COLOR;
+    self.view.backgroundColor = COLOR_VIEW_BACKGROUND;
     self.soundModel = [Sound createEntity];
     self.soundModel.created = [NSDate date];
     
-    self.recordButton.backgroundColor = COLOR_BUTTON_RED;
-    self.saveButton.backgroundColor = COLOR_BUTTON_GREEN;
+    
+    self.filenameTextField.delegate = self;
+    self.filenameTextField.layer.cornerRadius = 8;
+    self.filenameTextField.layer.masksToBounds = YES;
+    self.filenameTextField.backgroundColor = COLOR_ONE;
+    self.filenameTextField.textColor = COLOR_BUTTON_PRIMARY_TEXT;
+    
+    self.stopButton.backgroundColor =
+    self.recordButton.backgroundColor = COLOR_TWO;
+    
+    self.playButton.backgroundColor = COLOR_THREE;
+    self.playBackwards.backgroundColor = COLOR_FOUR;
+    
+    self.saveButton.backgroundColor = COLOR_FIVE;
     
     self.title = NSLocalizedString(@"Record Sound", nil);
     
-    self.filenameTextField.delegate = self;
-
-    // Setup audio session
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    // Define the recorder setting
-    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
-    
-    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
-    [recordSetting setValue: [NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey]; // mono
-	[recordSetting setValue: [NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:16000.00] forKey:AVSampleRateKey];
-    [recordSetting setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
-	[recordSetting setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
-    
-    // Initiate and prepare the recorder
-    _recorder = [[AVAudioRecorder alloc] initWithURL:self.soundModel.audioURLOriginal settings:recordSetting error:NULL];
-    _recorder.delegate = self;
-    _recorder.meteringEnabled = YES;
-    [_recorder prepareToRecord];
-    
-    
-}
--(void)viewWillDisappear:(BOOL)animated {
-    if (self.soundModel.name.length == 0) {
-        [self.soundModel deleteEntity];
+    [self updateUIState];
+	if ([self startAudioSession])
+    {
+		[self prepareToRecord];
     }
 }
--(void)viewWillAppear:(BOOL)animated {
+
+-(void)viewDidDisappear:(BOOL)animated {
     
+    if ( !self.hasSavedAudio ) {
+        [self.soundModel deleteSound];
+    }
+    
+    [self.view endEditing:YES];
+    [self.view removeGestureRecognizer:self.tapGesture];
+    
+}
+-(void)viewDidAppear:(BOOL)animated {
     [self updateUIState];
     
+    self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_tapped:)];
+    [self.view addGestureRecognizer:self.tapGesture];
+    
+}
+
+
+-(void)_tapped:(UITapGestureRecognizer*)tap {
+    [self.view endEditing:YES];
 }
 
 -(void)updateUIState {
@@ -136,23 +145,21 @@
             
     }
    
+    [self.view endEditing:YES];
+    
 }
 
 - (IBAction)_stop:(id)sender {
-    
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setActive:NO error:nil];
-    
-    if (_recorder.recording) {
-        [_recorder stop];
+ 
+    if (self.player.isPlaying) {
         
-        [self startProcessingAudio];
+        [self stopPlaying];
+        
     }
     
-    if (_player) {
-        
-        [_player stop];
-        [_player setCurrentTime:0];
+    if (self.recorder.isRecording) {
+    
+        [self stopRecording];
         
     }
     
@@ -162,28 +169,8 @@
 }
 
 - (IBAction)_record:(id)sender {
-    
-//    [self toggleRecording:nil];
-    
-    if (_player) {
-        [_player stop];
-    }
-    
-    
-    if (!_recorder.recording) {
-        
-        AVAudioSession *session = [AVAudioSession sharedInstance];
-        [session setActive:YES error:nil];
-        
-        // start recording
-        [_recorder record];
-        
-    } else {
-        
-        // pause recording
-        [_recorder pause];
-    }
-    
+   
+    [self startRecording];
     self.currentState = kRecordUIStatesRecording;
     [self updateUIState];
     
@@ -193,14 +180,7 @@
 
 - (IBAction)_play:(id)sender {
     
-//    [self playFile:nil];
-    
-    if (!_recorder.isRecording) {
-        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:_recorder.url error:nil];
-        [_player setDelegate:self];
-        [_player play];
-    }
-    
+    [self startPlaying];
     self.currentState = kRecordUIStatesPlaying;
     [self updateUIState];
     
@@ -208,7 +188,8 @@
 }
 
 - (IBAction)_playBackwards:(id)sender {
-    
+ 
+    [self startPlayingReversed];
     self.currentState = kRecordUIStatesPlayingBackwards;
     [self updateUIState];
     
@@ -216,21 +197,29 @@
 
 - (IBAction)_saveRecording:(id)sender {
     
-    self.soundModel.name = self.filenameTextField.text;
+    if (self.filenameTextField.text.length > 0) {
+        self.soundModel.name = self.filenameTextField.text;
+    } else {
+        self.soundModel.name = @"Sound";
+    }
+    
 //    self.soundModel.created = [NSDate date];
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         
         if (success) {
+            self.hasSavedAudio = YES;
+
+            [self.navigationController popViewControllerAnimated:YES];
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
-                                                            message:@"Your sound has finished saving"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            alert.delegate = self;
-            alert.tag = kAudioAlertViewSuccessTag;
-            [alert show];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!"
+//                                                            message:@"Your sound has finished saving"
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"OK"
+//                                                  otherButtonTitles:nil];
+//            alert.delegate = self;
+//            alert.tag = kAudioAlertViewSuccessTag;
+//            [alert show];
             
         }
         else
@@ -249,94 +238,198 @@
     
 }
 
--(void)startProcessingAudio {
-    /*
-     As each sample is 16-bits in size(2 bytes)(mono channel).
-     You can load each sample at a time by copying it into a different buffer by starting at the end of the recording and
-     reading backwards. When you get to the start of the data you have reversed the data and playing will be reversed.
-     */
+-(void)reverseAudio {
     
-    // set up output file
-    AudioFileID outputAudioFile;
-    
-    AudioStreamBasicDescription myPCMFormat;
-	myPCMFormat.mSampleRate = 16000.00;
-	myPCMFormat.mFormatID = kAudioFormatLinearPCM ;
-	myPCMFormat.mFormatFlags =  kAudioFormatFlagsCanonical;
-	myPCMFormat.mChannelsPerFrame = 1;
-	myPCMFormat.mFramesPerPacket = 1;
-	myPCMFormat.mBitsPerChannel = 16;
-	myPCMFormat.mBytesPerPacket = 2;
-	myPCMFormat.mBytesPerFrame = 2;
-    
-    
-	AudioFileCreateWithURL((__bridge CFURLRef)self.soundModel.audioURLReversed,
-                           kAudioFileCAFType,
-                           &myPCMFormat,
-                           kAudioFileFlags_EraseFile,
-                           &outputAudioFile);
-    // set up input file
-    AudioFileID inputAudioFile;
-    OSStatus theErr = noErr;
-    UInt32 fileDataSize = 0;
-    
-    AudioStreamBasicDescription theFileFormat;
-    UInt32 thePropertySize = sizeof(theFileFormat);
-    
-    theErr = AudioFileOpenURL((__bridge CFURLRef)self.soundModel.audioURLOriginal, kAudioFileReadPermission, 0, &inputAudioFile);
-    
-    if (theErr) {
-        NSLog(@"ERROR OPENING ORIGINAL RECORDING");
-    }
-    
-    thePropertySize = sizeof(fileDataSize);
-    theErr = AudioFileGetProperty(inputAudioFile, kAudioFilePropertyAudioDataByteCount, &thePropertySize, &fileDataSize);
-    
-    UInt32 dataSize = fileDataSize;
-    void* theData = malloc(dataSize);
-    
-    //Read data into buffer
-    UInt32 readPoint  = dataSize;
-    UInt32 writePoint = 0;
-    while( readPoint > 0 )
-    {
-        UInt32 bytesToRead = 2;
+        [APP_DELEGATE performSelectorOnMainThread:@selector(showHud:) withObject:@"Processing Audio Data..." waitUntilDone:YES];
         
-        AudioFileReadBytes( inputAudioFile, false, readPoint, &bytesToRead, theData );
-        AudioFileWriteBytes( outputAudioFile, false, writePoint, &bytesToRead, theData );
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND,0), ^(void) {
+           
+        /*
+         As each sample is 16-bits in size(2 bytes)(mono channel).
+         You can load each sample at a time by copying it into a different buffer by starting at the end of the recording and
+         reading backwards. When you get to the start of the data you have reversed the data and playing will be reversed.
+         */
         
-        writePoint += 2;
-        readPoint -= 2;
-    }
+        // set up output file
+        AudioFileID outputAudioFile;
+        
+        AudioStreamBasicDescription myPCMFormat;
+        myPCMFormat.mSampleRate = 16000.00;
+        myPCMFormat.mFormatID = kAudioFormatLinearPCM ;
+        myPCMFormat.mFormatFlags =  kAudioFormatFlagsCanonical;
+        myPCMFormat.mChannelsPerFrame = 1;
+        myPCMFormat.mFramesPerPacket = 1;
+        myPCMFormat.mBitsPerChannel = 16;
+        myPCMFormat.mBytesPerPacket = 2;
+        myPCMFormat.mBytesPerFrame = 2;
+        
+        
+        AudioFileCreateWithURL((__bridge CFURLRef)self.soundModel.audioURLReversed,
+                               kAudioFileCAFType,
+                               &myPCMFormat,
+                               kAudioFileFlags_EraseFile,
+                               &outputAudioFile);
+        // set up input file
+        AudioFileID inputAudioFile;
+        OSStatus theErr = noErr;
+        UInt64 fileDataSize = 0;
+        
+        AudioStreamBasicDescription theFileFormat;
+        UInt32 thePropertySize = sizeof(theFileFormat);
+        
+        theErr = AudioFileOpenURL((__bridge CFURLRef)self.soundModel.audioURLOriginal, kAudioFileReadPermission, 0, &inputAudioFile);
+        
+        thePropertySize = sizeof(fileDataSize);
+        theErr = AudioFileGetProperty(inputAudioFile, kAudioFilePropertyAudioDataByteCount, &thePropertySize, &fileDataSize);
+        
+        UInt32 dataSize = fileDataSize;
+        void* theData = malloc(dataSize);
+        
+        //Read data into buffer
+        UInt32 readPoint  = dataSize;
+        UInt32 writePoint = 0;
+        while( readPoint > 0 )
+        {
+            UInt32 bytesToRead = 2;
+            
+            AudioFileReadBytes( inputAudioFile, false, readPoint, &bytesToRead, theData );
+            AudioFileWriteBytes( outputAudioFile, false, writePoint, &bytesToRead, theData );
+            
+            writePoint += 2;
+            readPoint -= 2;
+        }
+        
+        free(theData);
+        AudioFileClose(inputAudioFile);
+        AudioFileClose(outputAudioFile);
+        
+        //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 10 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [APP_DELEGATE performSelectorOnMainThread:@selector(hideHud) withObject:nil waitUntilDone:NO];
+        //});
+        
+    });
     
-    free(theData);
-    AudioFileClose(inputAudioFile);
-	AudioFileClose(outputAudioFile);
     
-    NSLog(@"Fished saving reversed sound");
     
-    //Also delete the recorded audio
-//    NSError *error;
-//    if (![[NSFileManager defaultManager] removeItemAtURL:self.soundModel.audioURLOriginal error:&error])
-//		NSLog(@"Error: %@", [error localizedDescription]);
-    
-
     
 }
-#pragma mark - AVAudioPlayerDelegate
+#pragma mark -
+#pragma mark AVAudioPlayerDelegate methods
+#pragma mark -
 
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
-    
+
     self.currentState = kRecordUIStatesStopped;
     [self updateUIState];
+
+    [self reverseAudio];
+    NSLog(@"File saved to %@", [[self.soundModel.audioURLOriginal path] lastPathComponent]);
     
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    
+
     self.currentState = kRecordUIStatesStopped;
     [self updateUIState];
-   
+
+}
+
+
+#pragma mark -
+#pragma mark Private methods
+#pragma mark -
+
+- (void) stopRecording
+{
+	[self.recorder stop];
+    
+    
+}
+
+
+- (void)startRecording
+{
+ 	if (![self.recorder record])
+	{
+		NSLog(@"Error: Record failed");
+	}
+}
+
+-(void)prepareToRecord
+{
+	NSError *error;
+	
+	// Recording settings
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings setValue: [NSNumber numberWithInt:kAudioFormatLinearPCM] forKey:AVFormatIDKey];
+	[settings setValue: [NSNumber numberWithFloat:16000.00] forKey:AVSampleRateKey];
+	[settings setValue: [NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey]; // mono
+	[settings setValue: [NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
+	[settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
+	[settings setValue: [NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
+
+	// Create recorder
+	self.recorder = [[AVAudioRecorder alloc] initWithURL:self.soundModel.audioURLOriginal settings:settings error:&error];
+	if (!self.recorder)
+	{
+		NSLog(@"Error: %@", [error localizedDescription]);
+	}
+	
+	// Initialize degate, metering, etc.
+	self.recorder.delegate = self;
+	
+	if (![self.recorder prepareToRecord])
+	{
+		NSLog(@"Error: Prepare to record failed");
+	}
+    
+}
+
+-(void)startPlayingReversed
+{
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.soundModel.audioURLReversed error:nil];
+    player.delegate = self;
+    if(![self.player play])
+    {
+        NSLog(@"Error: Play failed");
+    }
+}
+-(void)startPlaying
+{
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.soundModel.audioURLOriginal error:nil];
+    player.delegate = self;
+    if(![self.player play])
+    {
+        NSLog(@"Error: Play failed");
+    }
+}
+
+-(void)stopPlaying
+{
+    [self.player stop];
+}
+
+
+- (BOOL) startAudioSession
+{
+	NSLog(@"startAudioSession");
+	// Prepare the audio session
+	NSError *error;
+	self.session = [AVAudioSession sharedInstance];
+	
+	if (![self.session setCategory:AVAudioSessionCategoryPlayAndRecord error:&error])
+	{
+		NSLog(@"Error: %@", [error localizedDescription]);
+		return NO;
+	}
+	
+	if (![self.session setActive:YES error:&error])
+	{
+		NSLog(@"Error: %@", [error localizedDescription]);
+		return NO;
+	}
+    
+	return self.session.inputAvailable;//make sure ;)
 }
 
 #pragma mark - UIAlertViewDelegate

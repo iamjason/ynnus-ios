@@ -14,7 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-InfColorPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MagicalRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2B34AAA15F7F458BA40AD77F</key>
+		<key>3D0F6D3E976046D8B83B8EFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30F274755F11459A807D3028</key>
+		<key>417B1CD35D764776AE138FA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>423C857B882042EEB71D5BBC</key>
+		<key>61D7F25F4849425F8918955C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95AF6B8D1E2A46A6964BA411</key>
+		<key>71417A22DA414D56A30AF551</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95BE69707B5541DAA52821A4</key>
+		<key>B5B66FBBF82F43B099E22043</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BBAA37ACA70D424A9CA568B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E7211A40A3DF462CADF646A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

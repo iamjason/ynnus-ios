@@ -1,0 +1,13 @@
+ynnuS is an iOS app that records sounds and plays them backwards.
+\n\n
+Why?
+\n\n
+Because, it's always sunny in philadelphia...  
+\n\n
+♪ ♫ ♪ raaa-daath moonf noorbar reear ♩ ♫ ♩
+\n\n
+becomes magically:
+\n\n
+♪ ♫ ♪ Eagles are born from thu-un-der! ♩ ♫ ♩
+\n\n
+(Check the credits of when the ball hits the wall)

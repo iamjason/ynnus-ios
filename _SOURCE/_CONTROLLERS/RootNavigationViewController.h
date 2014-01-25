@@ -16,4 +16,5 @@
 
 -(void)showInfoViewController;
 
+-(void)showRemoteHTMLViewController:(NSURL*)aURL navTitle:(NSString*)navTitle;
 @end

@@ -9,6 +9,7 @@
 #import "JGAppDelegate.h"
 #import "RootNavigationViewController.h"
 #import <TestFlightSDK/TestFlight.h>
+#import <ProgressHUD/ProgressHUD.h>
 
 @import AVFoundation;
 
@@ -22,19 +23,24 @@
     [TestFlight takeOff:@"a58c96f6-5b90-48c0-ae47-db7f6d714cbd"];
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"ynnuS.v.1.0"];
     
-    //[self initAudioSession];
+    //
+    [self initAudioSession];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    self.window.backgroundColor = UINAVIGATIONBAR_TINT_COLOR;
-    self.window.tintColor = UINAVIGATIONBAR_TITLE_COLOR;
+    self.window.backgroundColor = COLOR_NAVIGATIONBAR_BACKGROUND;
+    self.window.tintColor = COLOR_NAVIGATIONBAR_TITLE;
     
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
-    [[UINavigationBar appearance] setBarTintColor:UINAVIGATIONBAR_TINT_COLOR];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                         COLOR_NAVIGATIONBAR_TITLE, NSForegroundColorAttributeName,
+                                                          FONT(20), NSFontAttributeName, nil] forState:0];
+    
+    [[UINavigationBar appearance] setBarTintColor:COLOR_NAVIGATIONBAR_BACKGROUND];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           UINAVIGATIONBAR_TITLE_COLOR, NSForegroundColorAttributeName,
+                                                           COLOR_NAVIGATIONBAR_TITLE, NSForegroundColorAttributeName,
                                                            FONT(20), NSFontAttributeName, nil]];
     
     [self.window makeKeyAndVisible];
@@ -78,7 +84,6 @@
     
 }
 
-
 #pragma mark - Application Initializations
 -(void)initAudioSession {
     
@@ -97,6 +102,16 @@
     }
     
 }
+
+
+-(void)showHud:(NSString*)message {
+    [ProgressHUD show:message];
+}
+-(void)hideHud {
+    [ProgressHUD dismiss];
+}
+
+
 
 #pragma mark - Application's Documents directory
 

@@ -8,10 +8,12 @@
 
 #import "PlaySoundViewController.h"
 #import "Globals.h"
+#import "FDWaveformView.h"
+
 
 @import AVFoundation;
 
-@interface PlaySoundViewController () <UIAlertViewDelegate,AVAudioPlayerDelegate>
+@interface PlaySoundViewController () <UIAlertViewDelegate,AVAudioPlayerDelegate,FDWaveformViewDelegate>
 
 @property (nonatomic, assign) PlayUIStates currentState;
 
@@ -21,6 +23,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *stopButton;
 
 @property (nonatomic,strong) AVAudioPlayer *player;
+
+@property (nonatomic,strong) FDWaveformView *waveform;
+
 
 @end
 
@@ -41,10 +46,15 @@
 {
     [super viewDidLoad];
 	
-    self.view.backgroundColor = VIEW_BACKGROUND_COLOR;
+    self.view.backgroundColor = COLOR_VIEW_BACKGROUND;
     // Do any additional setup after loading the view.
     self.title = self.soundModel.name;
-    self.deleteButton.backgroundColor = COLOR_BUTTON_RED;
+    self.deleteButton.backgroundColor = COLOR_BUTTON_RECORD;
+    
+    self.playButton.backgroundColor = COLOR_THREE;
+    self.playBackwardsButton.backgroundColor = COLOR_TWO;
+    self.deleteButton.backgroundColor = COLOR_FOUR;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +66,22 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     [self updateUIState];
+    
+    
+//    self.waveform = [[FDWaveformView alloc] initWithFrame:CGRectMake(10, 45, 300, 70)];
+//    self.waveform.delegate = self;
+//    self.waveform.audioURL = self.soundModel.audioURLOriginal;
+//    self.waveform.progressSamples = 150;
+    
+    [self.view addSubview:self.waveform];
+    
+    
+}
+#pragma mark -
+#pragma mark FDWaveformViewDelegate
+
+- (void)waveformViewDidRender:(FDWaveformView *)waveformView
+{
     
 }
 
@@ -106,11 +132,11 @@
     
     //    [self playFile:nil];
     
-    if (!_player) {
+    //if (!_player) {
         _player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.soundModel.audioURLOriginal error:nil];
         [_player setDelegate:self];
        
-    }
+    ///}
     [_player setCurrentTime:0];
     
      [_player play];
@@ -122,7 +148,14 @@
 }
 
 - (IBAction)_playBackwards:(id)sender {
+    //if (!_player) {
+        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.soundModel.audioURLReversed error:nil];
+        [_player setDelegate:self];
+        
+   // }
+    [_player setCurrentTime:0];
     
+    [_player play];
     self.currentState = kPlayUIStatesPlayingBackwards;
     [self updateUIState];
     
@@ -130,16 +163,17 @@
 
 - (IBAction)_delete:(id)sender {
     
-    [self.soundModel deleteEntity];
+    [self.soundModel deleteSound];
     
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         
         if (success) {
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your sound has been deleted" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            alert.delegate = self;
-            alert.tag = kAudioAlertViewSuccessTag;
-            [alert show];
+
+            [self.navigationController popViewControllerAnimated:YES];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your sound has been deleted" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//            alert.delegate = self;
+//            alert.tag = kAudioAlertViewSuccessTag;
+//            [alert show];
             
         }
         else
